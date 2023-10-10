@@ -31,8 +31,19 @@ class Discount:
         self.price = price
 
     def give_discount(self):
-            if self.customer == 'fav':
-                return self.price * 0.2
-            if self.customer == 'vip':
-                return self.price * 0.4
+        pass
+    
+class FavDiscount(Discount):
+    def __init__(self, customer, price):
+        super().__init__(customer, price)
 
+    def give_discount(self):
+        return self.price * 0.2
+            
+class VIPDiscount(Discount):
+    def __init__(self, customer, price):
+        super().__init__(customer, price)
+
+    def give_discount(self):
+        return self.price * 0.4
+    
