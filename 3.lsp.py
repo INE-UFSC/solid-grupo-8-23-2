@@ -35,6 +35,3 @@ def animal_leg_count(animals: list):
     for animal in animals:
         count += animal.leg_count()
     return count
-
-
-
