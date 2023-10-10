@@ -1,9 +1,12 @@
+from abc import ABC, abstractmethod
+
+
 """
 Liskov Substitution Principle
 
 Uma subclasse deve ser substituível pela sua superclasse 
 """
-class Animal:
+class Animal(ABC):
     def __init__(self, name: str):
         self.name = name
     
@@ -25,8 +28,7 @@ class Snake(Animal):
         super().__init__('snake')
 
     def leg_count(self):
-        print('I have no legs, dummy')
-
+        return 0
 
 def animal_leg_count(animals: list):
     count = 0

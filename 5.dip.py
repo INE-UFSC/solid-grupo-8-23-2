@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+
+
 """
 Dependency Inversion Principle
 
@@ -6,7 +9,7 @@ Dependências devem ser feitas sobre abstrações, não sobre implementações c
 """
 
 
-class Player:
+class Player(ABC):
     def __init__(self, name):
         self.stats = StatsReporter(self)
         self.__name = name

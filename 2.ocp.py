@@ -1,34 +1,21 @@
+from abc import ABC, abstractmethod
+
+
 """
 Open-Closed Principle
 
 Classes devem estar fechadas para modificação, mas abertas para extensão
 """
-class Animal:
-    def __init__(self, name: str):
+class Animal(ABC):
+    def __init__(self, name: str, sound=None):
         self.name = name
+        self.sound = sound
     
     def get_name(self) -> str:
         pass
 
     def make_sound(self):
-        if self.name == 'lion':
-            print('roar')
-        elif self.name == 'mouse':
-            print('squeak')
-        else:
-            print('...')
-
-animals = [
-    Animal('lion'),
-    Animal('mouse')
-]
-
-def animal_sound(animals: list):
-    for animal in animals:
-        animal.make_sound()
-
-animal_sound(animals)
-
+        return self.sound
 
 """
 Outro exemplo:
