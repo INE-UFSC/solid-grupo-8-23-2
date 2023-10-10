@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+
+
 """
 Single Responsibility Principle
 
@@ -13,7 +16,10 @@ class Animal:
     def get_name(self) -> str:
         pass
 
-class AnimalSave(Animal):
+class DAO(ABC):
+    pass
+
+class AnimalDAO(DAO):
     # salva no DB
     def save(self, animal: Animal):
         pass
